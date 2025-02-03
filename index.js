@@ -19,7 +19,7 @@ app.post("/api/chat", async (req, res) => {
     if (!message) {
       return res.status(400).json({ error: "Message is required" });
     }
-
+console.log("DEBUG: OpenAI API Key is:", process.env.OPENAI_API_KEY);
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY, // Reads from environment variables
     });
